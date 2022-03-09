@@ -1,4 +1,7 @@
 {
+  "name": "umi-admin",
+  "version": "0.0.1",
+  "author":  "草鞋没号 <308487730@qq.com>",
   "private": true,
   "scripts": {
     "dev": "umi dev",
