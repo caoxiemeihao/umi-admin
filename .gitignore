@@ -1,0 +1,29 @@
+/node_modules
+/.env.local
+/.umirc.local.ts
+/config/config.local.ts
+/src/.umi
+/src/.umi-production
+/.umi
+/.umi-production
+/dist
+/.mfsu
+
+.DS_Store
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
