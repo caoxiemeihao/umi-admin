@@ -9,3 +9,7 @@ umi4.x + antd + axios
 - `axios` 在 `utils/api.ts`
 
 - 菜单写在 `layouts/index.tsx`
+
+## TODO
+
+- [2022-03-28] 目前用的 `styles/bootstrap-partial.less`，后期需要换成 Tailwindcss
