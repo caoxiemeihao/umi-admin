@@ -1,9 +1,8 @@
-import { Link, Outlet, useLocation } from 'umi'
-import { Layout, Menu } from 'antd'
-import { MenuOutlined } from '@ant-design/icons'
-import './index.less'
-import { useEffect } from 'react'
+import { Link, Outlet, useLocation, history } from 'umi'
+import { Layout, Menu, Popover } from 'antd'
+import { MenuOutlined, UserOutlined } from '@ant-design/icons'
 import { getUserInfo } from '@/utils/auth'
+import './index.less'
 
 const { SubMenu } = Menu
 const { Header, Content, Sider } = Layout
@@ -14,16 +13,34 @@ export default function AppLayout() {
   const isLoginPage = location.pathname === '/login'
   const userInfo = getUserInfo()
 
+  const clickLogout = () => {
+    sessionStorage.removeItem('userinfo')
+    history.push('/login')
+  }
+
+  const UserCenter = (
+    <div>
+      <a onClick={clickLogout}>退出登录</a>
+    </div>
+  )
+
   return isLoginPage
     ? <Outlet />
     : (
       <Layout className="app-layout">
         <Header className="header">
           <div className="d-flex justify-content-between">
-            <h2>🥖</h2>
-            <div>
-              {userInfo?.username || '请登录'}
-            </div>
+            <h2 className='m-0'>🥖</h2>
+            <Popover
+              title='个人中心'
+              trigger='hover'
+              content={UserCenter}
+            >
+              <div className='user-center cursor-pointer text-center'>
+                <UserOutlined />
+                <span className="ml-2">{userInfo?.username || '请登录'}</span>
+              </div>
+            </Popover>
           </div>
         </Header>
         <Layout className="layout-side">

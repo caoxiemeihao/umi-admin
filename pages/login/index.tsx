@@ -36,7 +36,7 @@ export default function Login() {
         form={form}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
-        autoComplete="off"
+        autoComplete='off'
       >
       <h1 className='text-center'>
         大哥吃油条 🥖
@@ -48,6 +48,7 @@ export default function Login() {
           <Input
             prefix={<UserOutlined className="site-form-item-icon" />}
             placeholder='用户名'
+            autoComplete='off'
           />
         </Form.Item>
 
@@ -58,7 +59,7 @@ export default function Login() {
           <Input.Password
             prefix={<LockOutlined className="site-form-item-icon" />}
             placeholder='密码'
-            autoComplete='on'
+            autoComplete='off'
           />
         </Form.Item>
 
