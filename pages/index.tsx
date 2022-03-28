@@ -1,5 +1,4 @@
-import React from 'react';
-import { Button } from 'antd';
+import { Button } from 'antd'
 
 export default function HomePage() {
   return (
@@ -14,5 +13,5 @@ export default function HomePage() {
       <hr />
       <Button type='primary'>按钮</Button>
     </div>
-  );
+  )
 }
