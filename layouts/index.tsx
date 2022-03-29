@@ -1,12 +1,11 @@
-import { Link, Outlet, useLocation, history } from 'umi'
-import { Layout, Menu, Popover } from 'antd'
-import { MenuOutlined, UserOutlined } from '@ant-design/icons'
+import { Outlet, useLocation, history } from 'umi'
+import { Layout, Popover } from 'antd'
+import { UserOutlined } from '@ant-design/icons'
 import { getUserInfo } from '@/utils/auth'
+import SideMenu from './side'
 import './index.less'
 
-const { SubMenu } = Menu
 const { Header, Content, Sider } = Layout
-
 
 export default function AppLayout() {
   const location = useLocation()
@@ -43,32 +42,11 @@ export default function AppLayout() {
             </Popover>
           </div>
         </Header>
-        <Layout className="layout-side">
-          <Sider width={200} className="site-layout-background">
-            <Menu
-              mode="inline"
-              defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
-              style={{ height: '100%', borderRight: 0 }}
-            >
-              <Menu.Item key="1">
-                <Link to="/">首页</Link>
-              </Menu.Item>
-              <SubMenu key="sub1" icon={<MenuOutlined />} title="菜单组">
-                <Menu.Item key="2">
-                  <Link to="/docs">文档</Link>
-                </Menu.Item>
-              </SubMenu>
-            </Menu>
+        <Layout className='app-layout-side'>
+          <Sider className='bg-white' width={200}>
+            <SideMenu />
           </Sider>
-          <Content
-            className="site-layout-background"
-            style={{
-              padding: 24,
-              margin: 0,
-              minHeight: 280,
-            }}
-          >
+          <Content className='app-layout-content'>
             <Outlet />
           </Content>
         </Layout>

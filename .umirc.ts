@@ -1,3 +1,6 @@
+import { routes } from './routes';
+
 export default {
-  npmClient: 'pnpm'
+  npmClient: 'pnpm',
+  routes,
 };
