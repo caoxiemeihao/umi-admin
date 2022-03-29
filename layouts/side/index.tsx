@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { Link } from 'umi'
 import { Menu } from 'antd'
 import { MenuOutlined } from '@ant-design/icons'
@@ -9,6 +9,7 @@ const { SubMenu } = Menu
 
 export default function SideMenu() {
   const auth = useUserAuth()
+  // TODO: selectedKeys, openKeys 根据路由还原默认值
   const [selectedKeys, setSelectedKeys] = useState<string[]>(['/'])
   const [openKeys, setOpenKeys] = useState<string[]>([])
 
